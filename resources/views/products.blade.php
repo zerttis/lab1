@@ -74,10 +74,10 @@
     <div class="container">
         <h1>Список продуктов</h1>
         @foreach($products as $product)
-        <div class="card {{ $product['amount'] == 0 ? 'out-of-stock' : '' }}">
-            <h5>{{ $product['name'] }}</h5>
-            <p class="price">{{ number_format($product['cost'], 0, ',', ' ') }} ₽</p>
-            <p>Количество: {{ $product['amount'] }}</p>
+        <div class="card {{ $product['quantity'] == 0 ? 'out-of-stock' : '' }}">
+            <h5>{{ $product->name }}</h5>
+            <p class="price">{{ number_format($product['price'], 0, ',', ' ') }} ₽</p>
+            <p>Количество: {{ $product['quantity'] }}</p>
             <a href="#" class="btn">Купить</a>
         </div>
         @endforeach
