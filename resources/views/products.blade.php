@@ -75,6 +75,7 @@
         <h1>Список продуктов</h1>
         @foreach($products as $product)
         <div class="card {{ $product['quantity'] == 0 ? 'out-of-stock' : '' }}">
+        <a href="{{ route('product.show', $product->id) }}">{{ $product->name }}</a>
             <h5>{{ $product->name }}</h5>
             <p class="price">{{ number_format($product['price'], 0, ',', ' ') }} ₽</p>
             <p>Количество: {{ $product['quantity'] }}</p>
@@ -82,5 +83,6 @@
         </div>
         @endforeach
     </div>
+    {{$copyright}}
 </body>
 </html>
